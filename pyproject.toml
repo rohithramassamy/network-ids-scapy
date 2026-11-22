@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "network-ids-scapy"
+version = "1.0.0"
+description = "IDS/IPS réseau en Python : analyse de PCAP et détection d'attaques avec Scapy"
+authors = ["Rohith Ramassamy"]
+readme = "README.md"
+packages = [
+  { include = "src" },
+  { include = "tp1", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scapy = "^2.6.0"
+pygal = "^3.0.5"
+fpdf2 = "^2.8.1"
+python-dotenv = "^1.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+ids = "tp1.main:main"
